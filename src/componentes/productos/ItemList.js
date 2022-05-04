@@ -1,3 +1,4 @@
+
 import React from 'react'
 import {useEffect, useState} from "react"
 import {productosData} from "../../data/data.js";
@@ -14,7 +15,7 @@ const getProductos = () => {
     const getProductosPromise = new Promise ((resolve) => {
         setTimeout(() => {
             resolve(productosData)
-        }, 2000);
+        }, 1000);
     })
 
     getProductosPromise.then(dat => {

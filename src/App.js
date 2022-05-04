@@ -5,18 +5,21 @@ import Contador from './componentes/Contador';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import ItemDetailContainer from './componentes/consumiendoapis/ItemDetailContainer';
 
+
 function App() {
   return (
     <div className="App">
-      {/*<BrowserRouter>
+      <BrowserRouter>
       <NavBar/>
       <Routes>
-        <Route path= '/' element={}></Route>
+        <Route path='/' element= {<ItemListContainer/>}></Route>
+        <Route path='/categorias' element={<ItemListContainer/>} />
+        <Route path='/productos/:productosId' element= {<ItemDetailContainer/>}></Route>
+        <Route></Route>
+        <Route></Route>
       </Routes>
-      </BrowserRouter> */}
-      <NavBar/>
-      {/*<ItemListContainer/> */} 
-      <ItemDetailContainer/>
+      </BrowserRouter> 
+      
     </div>
   );
 }

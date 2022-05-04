@@ -1,20 +1,21 @@
 import React from 'react'
 
 
-const ItemDetail = ({producto}) => {
+const ItemDetail = ({productos}) => {
+
+  const {img, name, price, des } = productos
     
   return (   
     <>
     
         <div className='grid grid-cols-1 sm:grid-cols-12'>
           <div className='col-start-2 col-span-6'>
-            <img className='w-full' src={producto.img} alt='foto'></img>
+            <img className='w-full' src={img} alt='foto'></img>
           </div>
           <div className='bg-white col-start-9 col-span-3'>
-            <h1 className='font-semibold text-metal tracking-widest pt-4 text-2xl'>{producto.name}</h1>
-            <h2 className='text-gray text-lg mt-2 border-b-2 border-gris p-4'>{producto.price}</h2>
-            <button className='bg-verdei p-3 mt-3 text-white text-bold shadow-md mt-6 w-full '>AGREGAR AL CARRITO</button>
-          
+            <h1 className='font-semibold text-metal tracking-widest pt-4 text-2xl'>{name}</h1>
+            <h2 className='text-gray text-lg mt-2 border-b-2 border-gris p-4'>{price}</h2>
+            <button className='bg-verdei p-3 mt-3 text-white text-bold shadow-md mt-6 w-full '>AGREGAR AL CARRITO</button>         
             <div>
 
               <details className=' shadow peer mt-8  '  >
@@ -28,12 +29,10 @@ const ItemDetail = ({producto}) => {
             </div>
                 </summary>
               <div className='p-4'>
-                  <p className='text-gray text-sm text-justify'>Piedra de cuarzo, para rituales faciales. Al ser suave y de tamaño mediano, es perfecta para optimizar y facilitar el masaje deseado.</p>
+                  <p className='text-gray text-sm text-justify'>{des}</p>
                 </div>
               </details>
-            </div>
-
-                
+            </div>              
           </div>
         </div>
 
