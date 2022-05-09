@@ -9,6 +9,7 @@ export const productosData = [
         img: img1,
         name: 'GUASHA CORAZON',
         price: '$1.710',
+        stock: '5',
         des: 'Piedra de cuarzo, para rituales faciales. Al ser suave y de tamaño mediano, es perfecta para optimizar y facilitar el masaje deseado'
     },
 
@@ -17,6 +18,7 @@ export const productosData = [
         img: img2,
         name: 'CESTO DE JUNCO',
         price: '$2.250',
+        stock: '10',
         des: 'asdsdf'
     },
 
@@ -25,6 +27,7 @@ export const productosData = [
         img: img3,
         name: 'APOYA-COSAS',
         price: '$1.250',
+        stock: '8',
         des: 'ñlasdf'
     },
 
@@ -33,8 +36,7 @@ export const productosData = [
         img: img4,
         name: 'PORTA-MACETAS',
         price: '$1.250',
+        stock: '2',
         des: 'ñlasdf'
     },
-
-
 ]

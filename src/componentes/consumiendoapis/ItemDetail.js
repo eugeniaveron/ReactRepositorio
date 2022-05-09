@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from "react-router-dom";
+import Contador from '../Contador'
 
 
 const ItemDetail = ({productos}) => {
 
-  const {img, name, price, des } = productos
+  const {img, name, price, des, stock } = productos
+
+  const [finalizar, setFinalizar] = useState(false)
+
+  const onAdd = (count) =>{
+    setFinalizar(true)
+    console.log (count)
+  }
     
   return (   
     <>
@@ -15,7 +24,15 @@ const ItemDetail = ({productos}) => {
           <div className='bg-white col-start-9 col-span-3'>
             <h1 className='font-semibold text-metal tracking-widest pt-4 text-2xl'>{name}</h1>
             <h2 className='text-gray text-lg mt-2 border-b-2 border-gris p-4'>{price}</h2>
-            <button className='bg-verdei p-3 mt-3 text-white text-bold shadow-md mt-6 w-full '>AGREGAR AL CARRITO</button>         
+            
+
+            {finalizar ? (
+              <Link to = '/cart'> <button className='bg-verdei p-3 mt-3 text-white text-bold shadow-md mt-6 w-full ' >FINALIZAR COMPRA</button> </Link>
+              
+            ):(
+              <Contador stock ={stock} Initial={1} onAdd={onAdd}/>
+            )}
+                     
             <div>
 
               <details className=' shadow peer mt-8  '  >
