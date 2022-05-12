@@ -5,7 +5,7 @@ import Contador from '../Contador'
 
 const ItemDetail = ({productos}) => {
 
-  const {img, name, price, des, stock } = productos
+  const {img, name, price, des, stock, id } = productos
 
   const [finalizar, setFinalizar] = useState(false)
 
@@ -30,7 +30,7 @@ const ItemDetail = ({productos}) => {
               <Link to = '/cart'> <button className='bg-verdei p-3 mt-3 text-white text-bold shadow-md mt-6 w-full ' >FINALIZAR COMPRA</button> </Link>
               
             ):(
-              <Contador stock ={stock} Initial={1} onAdd={onAdd}/>
+              <Contador stock ={stock} Initial={1} onAdd={onAdd} id={id}/>
             )}
                      
             <div>

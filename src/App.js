@@ -5,24 +5,29 @@ import ItemListContainer from './componentes/ItemListContainer';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import ItemDetailContainer from './componentes/consumiendoapis/ItemDetailContainer';
 import Novocals from './componentes/Novocals';
+import CartContextProvider from './componentes/Context/CartContext';
+import AppContextProvider from './componentes/Context/AppContext';
 
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-      <NavBar/>
-      <Routes>
-        <Route path='/' element= {<ItemListContainer/>}></Route>
-        <Route path='/categorias' element={<ItemListContainer/>} />
-        <Route path='/productos/:productosId' element= {<ItemDetailContainer/>}></Route>
-        <Route path='/vocales' element={<Novocals/>} />
-        
-        <Route></Route>
-        <Route></Route>
-      </Routes>
-      </BrowserRouter> 
-      
+      <AppContextProvider>
+        <CartContextProvider>
+          <BrowserRouter>
+            <NavBar/>
+              <Routes>
+                <Route path='/' element= {<ItemListContainer/>}></Route>
+                <Route path='/categorias' element={<ItemListContainer/>} />
+                <Route path='/productos/:productosId' element= {<ItemDetailContainer/>}></Route>
+                <Route path='/vocales' element={<Novocals/>} />
+                
+                <Route></Route>
+                <Route></Route>
+            </Routes>
+          </BrowserRouter> 
+        </CartContextProvider>
+      </AppContextProvider>
     </div>
   );
 }

@@ -40,3 +40,11 @@ export const productosData = [
         des: 'ñlasdf'
     },
 ]
+
+const prod = new Promise ((resp) =>{
+    resp(productosData)
+}, 2000)
+
+export const getItem = () => {
+    return prod
+}
