@@ -4,51 +4,52 @@ const CartContext = createContext()
 
 export const useCartContext = () => useContext (CartContext)
 
-const CartContextProvider = ({children}) => {
-   
-  const [cart, setCart] = useState ([])
-  
-  const isInCart = (id) => cart.find(p =>p.id === id)
+const CartContextProvider = ({children}) => {   
+    const [cart, setCart] = useState ([])
+    
+    const isInCart = (id) => cart.find(p =>p.id === id)
 
-  const addToCart = (producto, cantidad) => {
-      const newCart = [ ...cart]
+    const addToCart = (producto, cantidad) => {
+        const newCart = [ ...cart]
 
-      const productoIsInCart = isInCart(producto.id)
+    const productoIsInCart = isInCart(producto.id)
 
-      if(productoIsInCart) {
-          newCart [
-              newCart.findIndex((prod) => prod.id === productoIsInCart.id)].quantity += cantidad
+    if(productoIsInCart) {
+        newCart [
+            newCart.findIndex((prod) => prod.id === productoIsInCart.id)].quantity += cantidad
 
-              setCart(newCart)
-              return
-          
-      }
-      producto.quantity = cantidad
-      setCart ([...newCart, producto]) 
-  }
-  const deleteFromCart = (producto) => {
-      const newCart = [...cart]
+            setCart(newCart)
+            return         
+    }
+    producto.quantity = cantidad
+    setCart ([...newCart, producto]) 
+    }
 
-      const productIsInCart = isInCart (producto.id)
+    const deleteFromCart = (producto) => {
+        const newCart = [...cart]
 
-      if(!productIsInCart){
-          return
-      }
-      const deleteProduct = newCart.filter((prod) => prod.id !== producto.id)
-      setCart(deleteProduct)
-  }
+        const productIsInCart = isInCart (producto.id)
 
-  const deleteCart =() => setCart([])
+        if(!productIsInCart){
+            return
+        }
+        const deleteProduct = newCart.filter((prod) => prod.id !== producto.id)
+        setCart(deleteProduct)
+    }
 
-  console.log(cart)
+    const deleteCart =() => setCart([])
 
-  return <CartContext.Provider value ={{
-                                        cart,
-                                        addToCart,
-                                        deleteFromCart,
-                                        deleteCart,
-                                        setCart,
-  }}>{""}{children}</CartContext.Provider>
+    console.log(cart)
+
+    const context = {
+        cart,
+        addToCart,
+        deleteFromCart,
+        deleteCart,
+        setCart,
+    }
+
+    return <CartContext.Provider value ={context}>{""}{children}</CartContext.Provider>
 }
 
 export default CartContextProvider

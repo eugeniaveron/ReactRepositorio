@@ -23,7 +23,7 @@ const ItemDetail = ({productos}) => {
           </div>
           <div className='bg-white col-start-9 col-span-3'>
             <h1 className='font-semibold text-metal tracking-widest pt-4 text-2xl'>{name}</h1>
-            <h2 className='text-gray text-lg mt-2 border-b-2 border-gris p-4'>{price}</h2>
+            <h2 className='text-gray text-lg mt-2 border-b-2 border-gris p-4'>$ {price}</h2>
             
 
             {finalizar ? (

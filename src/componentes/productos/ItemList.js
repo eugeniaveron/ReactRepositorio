@@ -15,7 +15,7 @@ const getProductos = () => {
     const getProductosPromise = new Promise ((resolve) => {
         setTimeout(() => {
             resolve(productosData)
-        }, 1000);
+        }, 100);
     })
 
     getProductosPromise.then(dat => {

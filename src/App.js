@@ -7,6 +7,7 @@ import ItemDetailContainer from './componentes/consumiendoapis/ItemDetailContain
 import Novocals from './componentes/Novocals';
 import CartContextProvider from './componentes/Context/CartContext';
 import AppContextProvider from './componentes/Context/AppContext';
+import Cart from './componentes/cart/Cart.js';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                 <Route path='/' element= {<ItemListContainer/>}></Route>
                 <Route path='/categorias' element={<ItemListContainer/>} />
                 <Route path='/productos/:productosId' element= {<ItemDetailContainer/>}></Route>
+                <Route path='/cart' element={<Cart/>} />
                 <Route path='/vocales' element={<Novocals/>} />
                 
                 <Route></Route>

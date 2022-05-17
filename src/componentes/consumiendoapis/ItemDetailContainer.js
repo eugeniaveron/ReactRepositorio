@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
     const getProductosP = new Promise ((res, rej) => {
       setTimeout (() => {
         res (productosData.find( m => m.id === productosId))
-      }, 1000);
+      }, 100);
     })
   
     getProductosP.then(data => {
