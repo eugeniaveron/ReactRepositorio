@@ -8,6 +8,8 @@ import Novocals from './componentes/Novocals';
 import CartContextProvider from './componentes/Context/CartContext';
 import AppContextProvider from './componentes/Context/AppContext';
 import Cart from './componentes/cart/Cart.js';
+import ProductDetail from './componentes/firebase/ProductDetail';
+import Productos from './componentes/firebase/productos';
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
                 <Route path='/productos/:productosId' element= {<ItemDetailContainer/>}></Route>
                 <Route path='/cart' element={<Cart/>} />
                 <Route path='/vocales' element={<Novocals/>} />
+                <Route path='/producto' element={<ProductDetail/>} />
+                <Route path='/productos' element={<Productos/>} />
                 
                 <Route></Route>
                 <Route></Route>

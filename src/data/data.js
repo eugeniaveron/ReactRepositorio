@@ -1,13 +1,9 @@
-import img1 from './fotos/manada3.jpg'
-import img2 from './fotos/manada4.jpg'
-import img3 from './fotos/manada5.jpg'
-import img4 from './fotos/manada6.jpg'
 
 export const productosData = [
     {
         id: '1',
-        img: img1,
-        name: 'GUASHA CORAZON',
+        img: 'https://i.ibb.co/0Y6CnRK/manada3.jpg',
+        title: 'GUASHA CORAZON',
         price: '1710',
         stock: '5',
         des: 'Piedra de cuarzo, para rituales faciales. Al ser suave y de tamaño mediano, es perfecta para optimizar y facilitar el masaje deseado'
@@ -15,8 +11,8 @@ export const productosData = [
 
     {
         id: '2',
-        img: img2,
-        name: 'CESTO DE JUNCO',
+        img: 'https://i.ibb.co/bHk0Fb9/manada4.jpg',
+        title: 'CESTO DE JUNCO',
         price: '2250',
         stock: '10',
         des: 'asdsdf'
@@ -24,8 +20,8 @@ export const productosData = [
 
     {
         id: '3',
-        img: img3,
-        name: 'APOYA-COSAS',
+        img: 'https://i.ibb.co/44GMGK1/manada5.jpg',
+        title: 'APOYA-COSAS',
         price: '1250',
         stock: '8',
         des: 'ñlasdf'
@@ -33,8 +29,8 @@ export const productosData = [
 
     {
         id: '4',
-        img: img4,
-        name: 'PORTA-MACETAS',
+        img: 'https://i.ibb.co/1nhLdxK/manada6.jpg',
+        title: 'PORTA-MACETAS',
         price: '1250',
         stock: '2',
         des: 'ñlasdf'
