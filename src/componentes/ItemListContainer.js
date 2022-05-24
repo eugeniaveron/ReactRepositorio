@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Productos from './firebase/productos'
+import ItemList from './firebase/productos'
+
 
 import Spinner from './spinner'
 
@@ -18,7 +19,7 @@ const ItemListContainer = () => {
     <>
     <h1 className='pt-40'> </h1>
 
-    {loader ? <Spinner/> : <Productos/> }
+    {loader ? <Spinner/> : <ItemList/> }
             
     </>
     )

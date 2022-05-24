@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Item = (props) => {
-
-  const {id, img, title, price,} = props.producto
+const Item = ({id, img, title, price} )=> {
 
   return (
     

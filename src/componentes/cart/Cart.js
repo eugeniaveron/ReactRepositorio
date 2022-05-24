@@ -38,7 +38,7 @@ const Cart = () => {
     {cart.map((productos) => {
             precioTotal += productos.price * productos.quantity;
             return (
-              <CartCard productos ={productos} key={productos.id}/>
+              <CartCard producto ={productos} key={productos.id}/>
             )
           })}
     

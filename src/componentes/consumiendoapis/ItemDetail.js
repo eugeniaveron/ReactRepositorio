@@ -1,11 +1,32 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
+import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
+import { useParams } from 'react-router-dom';
 import Contador from '../Contador'
 
 
-const ItemDetail = ({productos}) => {
+const ItemDetail = () => {
 
-  const {img, title, price, des, stock, id } = productos
+  const {productosId}= useParams()
+
+    const [producto, setProductos] = useState([])
+
+    useEffect(() => {
+      const db = getFirestore()
+
+      const ItemDet = doc(db, 'Items', productosId)
+
+
+      getDoc ( ItemDet ).then (snapshot =>{
+        if (snapshot.exists()){
+            console.log(snapshot)
+            setProductos(snapshot.data())
+        }
+      })
+    }, [productosId])
+    
+
+  
 
   const [finalizar, setFinalizar] = useState(false)
 
@@ -19,18 +40,18 @@ const ItemDetail = ({productos}) => {
     
         <div className='grid grid-cols-1 sm:grid-cols-12'>
           <div className='col-start-2 col-span-6'>
-            <img className='w-full' src={img} alt='foto'></img>
+            <img className='w-full' src={producto.img} alt='foto'></img>
           </div>
           <div className='bg-white col-start-9 col-span-3'>
-            <h1 className='font-semibold text-metal tracking-widest pt-4 text-2xl'>{title}</h1>
-            <h2 className='text-gray text-lg mt-2 border-b-2 border-gris p-4'>$ {price}</h2>
+            <h1 className='font-semibold text-metal tracking-widest pt-4 text-2xl'>{producto.title}</h1>
+            <h2 className='text-gray text-lg mt-2 border-b-2 border-gris p-4'>$ {producto.price}</h2>
             
 
             {finalizar ? (
               <Link to = '/cart'> <button className='bg-verdei p-3 mt-3 text-white text-bold shadow-md mt-6 w-full ' >FINALIZAR COMPRA</button> </Link>
               
             ):(
-              <Contador stock ={stock} Initial={1} onAdd={onAdd} id={id}/>
+              <Contador stock ={producto.stock} Initial={1} onAdd={onAdd} id={producto.id}/>
             )}
                      
             <div>
@@ -46,7 +67,7 @@ const ItemDetail = ({productos}) => {
             </div>
                 </summary>
               <div className='p-4'>
-                  <p className='text-gray text-sm text-justify'>{des}</p>
+                  <p className='text-gray text-sm text-justify'>{producto.des}</p>
                 </div>
               </details>
             </div>              
