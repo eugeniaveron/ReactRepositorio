@@ -1,12 +1,14 @@
 import React from 'react'
 
+import spinner from "../data/spin1.gif"
+
 const Spinner = () => {
   return (
-    <div class="flex justify-center items-center">
-  <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
-    <span class="visually-hidden"></span>
-  </div>
-</div>
+   
+    <div className="flex min-h-screen -mb-48">
+                <img src={spinner} alt="loader" className="m-auto mt-64" />
+            </div>
+  
   )
 }
 

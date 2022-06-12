@@ -28,6 +28,14 @@ const CartContextProvider = ({children}) => {
     setCart ([...newCart, producto]) 
     }
 
+    const cartQuantity = () => {
+        let quantity = 0
+        cart.forEach((item) => {
+            quantity = quantity + item.quantity
+        })
+        return quantity
+    }
+
     const deleteFromCart = producto => {
         const newCart = [...cart]
 
@@ -52,6 +60,7 @@ const CartContextProvider = ({children}) => {
         deleteFromCart,
         deleteCart,
         setCart,
+        cartQuantity,
         
     }
 

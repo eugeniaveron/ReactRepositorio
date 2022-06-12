@@ -4,6 +4,7 @@ module.exports = {
   ],
   theme: {
     colors: {
+      'black': '#000000',
       'green': '#9ebeb5',
       'white': '#ffffff',
       'metal': '#676868',

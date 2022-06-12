@@ -3,7 +3,6 @@ import NavBar from './componentes/navBar';
 import ItemListContainer from './componentes/ItemListContainer';
 
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import Novocals from './componentes/Novocals';
 import CartContextProvider from './componentes/Context/CartContext';
 import AppContextProvider from './componentes/Context/AppContext';
 import Cart from './componentes/cart/Cart.js';
@@ -25,10 +24,10 @@ function App() {
                 <Route path='/categorias' element={<ItemListContainer/>} />
                 <Route path='/productos/:productosId' element= {<Detail/>}></Route>
                 <Route path='/cart' element={<Cart/>} />
-                <Route path='/vocales' element={<Novocals/>} />
                 <Route path='/producto' element={<ProductDetail/>} />
                 <Route path='/productos' element={<Productos/>} />
                 <Route path='/detalles' element={<Detail/>} />
+                <Route path='/cart' element={<Cart/>} />
                 <Route path='/cartf' element={<CartFirebase/>} />
                 
                 <Route></Route>

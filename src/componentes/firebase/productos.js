@@ -28,7 +28,7 @@ const ItemList = () => {
   return (
       <>
     
-    <div className='grid grid-cols-4 gap-4 m-3'>
+    <div className='grid grid-cols-4 gap-4 ml-20 mr-20'>
     {productos.map( p => <Item id = {p.id} key= {p.id} title={p.title} price={p.price} img={p.img}/>)}
     </div>
     </>

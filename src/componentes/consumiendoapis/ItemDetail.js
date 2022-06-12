@@ -19,14 +19,15 @@ const ItemDetail = () => {
 
       getDoc ( ItemDet ).then (snapshot =>{
         if (snapshot.exists()){
-            console.log(snapshot)
-            setProductos(snapshot.data())
+            
+            const item = snapshot.data()
+            item.id = productosId
+            console.log(item)
+            setProductos(item)
         }
       })
     }, [productosId])
     
-
-  
 
   const [finalizar, setFinalizar] = useState(false)
 
@@ -48,7 +49,7 @@ const ItemDetail = () => {
             
 
             {finalizar ? (
-              <Link to = '/cart'> <button className='bg-verdei p-3 mt-3 text-white text-bold shadow-md mt-6 w-full ' >FINALIZAR COMPRA</button> </Link>
+              <Link to = '/cart'> <button className='bg-verdei font-medium p-3 mt-3  text-bold shadow-md mt-6 w-full text-white hover:text-gris ' >FINALIZAR COMPRA</button> </Link>
               
             ):(
               <Contador stock ={producto.stock} Initial={1} onAdd={onAdd} id={producto.id}/>

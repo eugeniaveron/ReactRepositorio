@@ -4,15 +4,24 @@ import { Link } from 'react-router-dom'
 const Item = ({id, img, title, price} )=> {
 
   return (
-    
-      <div className='flex justify-around '>
-        <div className='box-border w-80 p-1  border-gray shadow-md rounded border-2'>
-            <img src={img} alt='foto'></img>
+     <div className=''>
+      <div className=' '>
+        <div className='grid '>
+          <div>
+            <img className='opacity-100 hover:opacity-90' src={img} alt='foto'></img>
+            </div>
+            <div>
             <h1 className='font-semibold text-metal tracking-widest pt-4'>{title}</h1>
-            <h2 className='text-gray'>$ {price}</h2>           
-            <Link to= {`/productos/${id}`}><button className='bg-green p-3 mt-3 text-white text-bold shadow-md '> VER MAS </button></Link>
+            </div>
+            <div>
+            <h2 className='text-gray'>$ {price}</h2>  
+            </div> 
+            <div>        
+            <Link to= {`/productos/${id}`}><button className='bg-verdeo font-medium p-3 mt-3 text-white text-bold shadow-md w-full '> VER MAS </button></Link>
+            </div>
         </div>
-      </div>    
+      </div>  
+      </div>  
   )
 }
 
