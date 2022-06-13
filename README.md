@@ -1,16 +1,33 @@
-# Ecommerce para Manada
+# Proyecto final React JS
 
-Objetivo: crear una tienda virtual para Manada, objetos y decoración.
+**Objetivo**: Crear una tienda virtual para **Manada**, objetos y decoración.
+
+-------------------------------------
 
 ## Contenido
 
 - NavBar
 - Lista de productos
-- Detalles
+- Detalles de productos con contador 
+- Carrito de compras 
+- Formulario 
+- Modal de finalización de compra con Id del producto
 
+------------------------------------
 
-### Aclaraciones
+### Herramientas utilizadas
 
-- Todavía me falta profundizar en el diseño, y agregar más objetos.
-- En la parte de detalles, tengo que agregar el contador y modificar las descripciones.
-- Tengo que agregar un spinnera para la simulación de la carga de objetos
+- React JS
+- JavaScript
+- Node.js
+- TailwindCSS
+- Firestore
+- npm
+
+------------------------------------
+
+### Ejecución
+
+- Para iniciar el proyecto se debe ejecutar en la consola `npm start`
+
+- Enlace para ver funcionando el proyecto [https://react-repositorio.vercel.app/](*)

@@ -14,10 +14,10 @@ const NavBar = () =>{
             </div>
 
             <nav>
-                <ul className="md:flex gap-8 p-4 ">
-                    <li className="font-medium text-metal transform hover:text-gray"><Link to={'/'}>INICIO</Link></li>
-                    <li className="font-medium text-metal hover:text-gray"><Link to={'/categorias'}>PRODUCTOS</Link></li>
-                    <li className="font-medium text-metal hover:text-gray">CONTACTO</li>
+                <ul className="md:flex font-medium gap-8 p-4 tracking-wider ">
+                    <li className="text-metal transform hover:text-gray"><Link to={'/'}>INICIO</Link></li>
+                    <li className="text-metal hover:text-gray"><Link to={'/categorias'}>PRODUCTOS</Link></li>
+                    <li className="text-metal hover:text-gray">CONTACTO</li>
                 </ul>
             </nav>
 

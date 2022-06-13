@@ -1,15 +1,15 @@
 import './App.css';
 import NavBar from './componentes/navBar';
-import ItemListContainer from './componentes/ItemListContainer';
-
+import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import CartContextProvider from './componentes/Context/CartContext';
 import AppContextProvider from './componentes/Context/AppContext';
 import Cart from './componentes/cart/Cart.js';
-import ProductDetail from './componentes/firebase/ProductDetail';
-import Productos from './componentes/firebase/productos';
-import Detail from './componentes/firebase/Detail';
+
+
 import CartFirebase from './componentes/cart/CartFirebase';
+import ItemList from './componentes/ItemList/ItemList';
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
@@ -22,11 +22,11 @@ function App() {
               <Routes>
                 <Route path='/' element= {<ItemListContainer/>}></Route>
                 <Route path='/categorias' element={<ItemListContainer/>} />
-                <Route path='/productos/:productosId' element= {<Detail/>}></Route>
+                <Route path='/productos/:productosId' element= {<ItemDetailContainer/>}></Route>
                 <Route path='/cart' element={<Cart/>} />
-                <Route path='/producto' element={<ProductDetail/>} />
-                <Route path='/productos' element={<Productos/>} />
-                <Route path='/detalles' element={<Detail/>} />
+                
+                <Route path='/productos' element={<ItemList/>} />
+                <Route path='/detalles' element={<ItemDetailContainer/>} />
                 <Route path='/cart' element={<Cart/>} />
                 <Route path='/cartf' element={<CartFirebase/>} />
                 

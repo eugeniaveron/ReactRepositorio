@@ -6,8 +6,8 @@ const Spinner = () => {
   return (
    
     <div className="flex min-h-screen -mb-48">
-                <img src={spinner} alt="loader" className="m-auto mt-64" />
-            </div>
+        <img src={spinner} alt="loader" className="m-auto mt-64" />
+    </div>
   
   )
 }
