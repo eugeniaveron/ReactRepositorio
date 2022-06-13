@@ -30,4 +30,4 @@
 
 - Para iniciar el proyecto se debe ejecutar en la consola `npm start`
 
-- Enlace para ver funcionando el proyecto [https://react-repositorio.vercel.app/](*)
+- Enlace para ver funcionando el proyecto https://react-repositorio.vercel.app/
